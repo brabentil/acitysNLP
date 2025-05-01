@@ -1,17 +1,38 @@
+# If you experience connection issues, try one of the following commands:
+# pip install -r requirements.txt --index-url https://pypi.org/simple/
+# pip install -r requirements.txt --index-url https://pypi.tuna.tsinghua.edu.cn/simple/
+# pip install -r requirements.txt --trusted-host pypi.org --trusted-host files.pythonhosted.org
+
+# For dependency resolution issues, try:
+# pip install -r requirements.txt --no-dependencies
+# Then install dependencies manually as needed
+
+# Core packages
 streamlit==1.38.0
 langchain==0.1.14
 langchain-community==0.0.32
-langchain-core==0.1.37
+langchain-core>=0.1.41,<0.2.0
 sentence-transformers==2.6.1
 numpy==1.26.4
 requests==2.32.3
 pandas==2.2.2
+
+# Visualization packages
 matplotlib==3.8.4
 seaborn==0.13.2
-spacy==3.7.4
+
+# NLP packages - with relaxed versions to avoid dependency issues
+spacy>=3.5.0,<3.8.0
+thinc>=8.1.0  # Explicitly adding the thinc dependency
 tqdm==4.66.2
 scikit-learn==1.4.2
+
+# Document processing
 PyPDF2==3.0.1
 pillow==10.2.0
 pytesseract
-googletrans==4.0.0rc1
+
+# Alternative: use conda if pip fails
+# conda create -n acitysNLP python=3.9
+# conda activate acitysNLP
+# conda install -c conda-forge spacy
